@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react'
+
+import router from '@/router/index.js'
+import { RouterProvider } from 'react-router-dom'
 
 function App() {
-  return (
-    <>
-      <p>초기화</p>
-    </>
-  );
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default App
