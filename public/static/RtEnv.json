@@ -1,0 +1,12 @@
+[
+    {
+        "Env": "loc",
+        "WebUrl": "localhost",
+        "ApiBaseUrl": "http://localhost:8080"
+    },
+    {
+        "Env": "dev",
+        "WebUrl": "devpro-be",
+        "ApiBaseUrl": "http://14.63.196.211:28080"
+    }
+]

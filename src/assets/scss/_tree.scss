@@ -1,0 +1,197 @@
+// tree
+.tree-list {
+  position: relative;
+  .tree-node {
+    padding-left: 25px;
+    &>.tree-node__child {
+      display: none;
+    }
+    &>.tree-node__value.is-open + .tree-node__child {
+      display: block;
+    }
+    &>.tree-node__value .tree-sel.is-checked::after {
+      background:var(--el-color-primary-light-9);
+    }
+    // &:has(.tree-sel.is-checked) > .tree-node__value .tree-tog:not(:disabled) {
+    //   background-color: var(--el-color-primary);
+    // }
+  }
+  .tree-tog {
+    appearance: none;
+    flex: 0 0 auto;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    background: var(--el-color-info-dark-2);
+    z-index: 1;
+    cursor: pointer;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      width: 7px;
+      height: 1px;
+      border-radius: 1px;
+      background: var(--el-color-white);
+    }
+    &::after {
+      transform: rotate(90deg);
+    }
+    &:checked:not(:disabled) {
+      &::after {
+        display: none;
+      }
+    }
+    &:disabled {
+      cursor: default;
+      background-color: var(--el-text-color-disabled);
+    }
+  }
+  .tree-node__value {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    height: 42px;
+    padding-left: 25px;
+    .tree-tog {
+      margin: 0 0 0 -25px;
+    }
+    .tree-sel{
+      position: static;
+      z-index: 0;
+      &::after {
+        content:'';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 41px;
+        border-bottom: 1px solid var(--el-border-color-light);
+        z-index: -1;
+      }
+      &:hover::after{
+        background-color: var(--el-fill-color-light);
+      }
+    }
+    .el-radio__inner {
+      display: none;
+    }
+    .el-radio__label {
+      padding-left: 0;
+    }
+  }
+  .tree-node__child {
+    .tree-sel {
+      margin: 0 0 0 -25px;
+      &:before {
+        content: '';
+        flex: 0 0 auto;
+        width: 6px;
+        height: 7px;
+        margin: 0 10px 4px 7px;
+        border: solid var(--el-color-info);
+        border-width: 0 0 1px 1px;
+      }
+    }
+  }
+}
+
+// tree backup
+// .tree-list {
+//   position: relative;
+//   .tree-node {
+//     &>.tree-node__child {
+//       display: none;
+//     }
+//     &>.tree-node__value.is-open + .tree-node__child {
+//       display: block;
+//     }
+//     &>.tree-node__value .tree-sel.is-checked::after {
+//       background:var(--el-color-primary-light-9);
+//     }
+//     &:has(.tree-sel.is-checked) > .tree-node__value .tree-tog {
+//       background-color: var(--el-color-primary);
+//     }
+//   }
+//   .tree-tog {
+//     appearance: none;
+//     flex: 0 0 auto;
+//     position: relative;
+//     width: 15px;
+//     height: 15px;
+//     border-radius: 2px;
+//     background: var(--el-color-info);
+//     z-index: 1;
+//     cursor: pointer;
+//     &::before, &::after {
+//       content: '';
+//       position: absolute;
+//       border-radius: 1px;
+//       background: var(--el-color-white);
+//     }
+//     &::before {
+//       top: 7px;
+//       left: 4px;
+//       width: 7px;
+//       height: 1px;
+//     }
+//     &::after {
+//       top: 4px;
+//       left: 7px;
+//       width: 1px;
+//       height: 7px;
+//     }
+//     &:checked {
+//       &::after {
+//         display: none;
+//       }
+//     }
+//   }
+//   .tree-node__value {
+//     display: flex;
+//     align-items: center;
+//     column-gap: 10px;
+//     height: 42px;
+//     padding-left: 25px;
+//     .tree-sel{
+//       position: static;
+//       z-index: 0;
+//       &::after {
+//         content:'';
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         height: 41px;
+//         border-bottom: 1px solid $color-line;
+//         z-index: -1;
+//       }
+//     }
+//     .el-radio__input {
+//       display: none;
+//     }
+//     .el-radio__label {
+//       padding-left: 0;
+//     }
+//     &:hover .tree-sel::after{
+//       background-color: var(--el-fill-color-light);
+//     }
+//   }
+//   .tree-node__child {
+//     padding-left: 25px;
+//     .tree-node__value {
+//       padding-left: 0;
+//       &:before {
+//         content: '';
+//         position: relative;
+//         flex: 0 0 auto;
+//         width: 6px;
+//         height: 7px;
+//         margin: 0 2px 4px 8px;
+//         border: solid var(--el-color-info);
+//         border-width: 0 0 1px 1px;
+//         z-index: 1;
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,130 @@
+@import "mixin";
+@import "variable";
+
+// 메인
+.main-contents {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "s1 s1 s1 s1 s1 s1 s1 s1 s1 s1 s1 s1"
+    "s2 s2 s2 s2 s2 s2 s2 s2 s3 s3 s3 s3"
+    "s4 s4 s4 s4 s4 s4 s4 s5 s5 s5 s5 s5";
+  gap: 20px;
+  .section-box {
+    padding: 30px 30px 35px 30px;
+    border-radius: 4px;
+    border: solid rgba(0,0,0,0.05);
+    border-width: 0 1px 1px 0;
+    background: #fff;
+    &>:first-child {
+      margin-top: 0 !important;
+    }
+  }
+  .section1 {
+    grid-area: s1;
+  }
+  .section2 {
+    grid-area: s2;
+  }
+  .section3 {
+    grid-area: s3;
+  }
+  .section4 {
+    grid-area: s4;
+  }
+  .section5 {
+    grid-area: s5;
+  }
+}
+.main-overall {
+  display: flex;
+  gap: 20px;
+  .overall-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+    border-radius: 4px;
+    background-color: var(--el-fill-color);
+    .item-icon {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      padding: 15px;
+      color: #fff;
+      font-size: 25px;
+      border-radius: 100%;
+      background: var(--el-color-primary-light-3);
+    }
+    .item-info {
+      flex: 1;
+      position: relative;
+      .tit {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .count {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 1;
+        .unit {
+          font-size: 24px;
+        }
+      }
+      .rate {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 16px;
+        color: var(--el-text-color-secondary);
+        &.up {
+          color: var(--el-color-primary);
+        }
+      }
+    }
+  }
+}
+.chart-bar {
+  canvas {
+    width: 100%;
+  }
+}
+.chart-doughnut {
+  position: relative;
+  canvas {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .chart-info {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 280px;
+    transform: translateX(-50%);
+    .icon { 
+      margin-bottom: 5px;
+      padding: 15px;
+      font-size: 20px;
+      border-radius: 100%;
+      background-color: var(--el-fill-color);
+    }
+    .rate {
+      font-size: 40px;
+      .unit {
+        font-size: 24px;
+      }
+    }
+    .total {
+      margin-top: 5px;
+      font-size: 18px;
+    }
+  }
+}

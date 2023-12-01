@@ -1,0 +1,95 @@
+@import "mixin";
+@import "variable";
+
+// 로그인
+.login-contents {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: var(--gnb-height) 0;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.30) 100%), #E1E2E4;
+  .footer {
+    margin-bottom: -40px;
+  }
+}
+.login-head {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--gnb-height);
+  padding: 0 32px;
+  .logo {
+    display: flex;
+    height: var(--gnb-logo-height);
+  }
+}
+.login-area {
+  position: relative;
+  .login-box {
+    position: relative;
+    width: 540px;
+    padding: 75px;
+    border: 1px solid var(--el-border-color-linght);
+    background: var(--el-color-white);
+    .tit-login {
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-align: center;
+    }
+    .form-login {
+      display: flex;
+      flex-direction: column;
+      .el-input:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+    .form-captcha {
+      margin-top: 12px;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid var(--el-border-color-light);
+      .capt-tit {
+        display: block;
+        font-size: 17px;
+      }
+      .capt-desc {
+        margin-top: 4px;
+        color: var(--el-text-color-priamry);
+      }
+      .capt-img {
+        height: 60px;
+        margin-top: 8px;
+        border: 1px solid var(--el-border-color-light);
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .capt-inp {
+        display: flex;
+        gap: 6px;
+        margin-top: 8px;
+      }
+    }
+    .edit {
+      margin-top: 8px;
+    }
+    .link {
+      margin-top: 20px;
+      display: flex;
+      .el-button {
+        flex: 1 1 100%;
+      }
+    }
+    .txt-notify {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}
